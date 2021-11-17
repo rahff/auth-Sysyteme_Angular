@@ -1,0 +1,23 @@
+
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 px-3 border-bottom">
+    <a routerLink="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img class="bi me-2" src="../../assets/brand/bootstrap-logo.svg" width="40" height="32" role="img" aria-label="logo">
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+      <li><a routerLink="/login" [queryParams]="{contact:true}" class="nav-link px-2 link-dark">Contact</a></li>
+    </ul>
+
+    <div id="test0" class="col-md-3 text-end" *ngIf="!user">
+      <button routerLink="/login" type="button" class="btn btn-outline-primary me-2">Login</button>
+      <button routerLink="/login" [queryParams]="{signup:true}" type="button" class="btn btn-primary">Sign-up</button>
+    </div>
+    <div id="test1" class="col-md-3 text-end" *ngIf="user">
+      <button (click)="logout()" type="button" class="btn btn-primary">Logout</button>
+    </div>
+  </header>
+  <div class="b-example-divider"></div>
